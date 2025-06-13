@@ -1,3 +1,11 @@
+// Fix para iOS
+function setVhUnit() {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+setVhUnit();
+window.addEventListener('resize', setVhUnit);
+
+// 🎯 Chips animadas
 const chipsContainer = document.querySelector(".chips-container");
 
 const colors = ['#D32F2F', '#9C27B0', '#FFD700', '#030001']; // rojo, violeta, dorado
@@ -37,8 +45,7 @@ function createChip() {
 // Lanzar una ficha cada 250ms
 setInterval(createChip, 250);
 
-// Numeros
-
+// 📱 Lógica de WhatsApp + GA
 document.addEventListener("DOMContentLoaded", () => {
   const whatsappButton = document.getElementById("whatsapp-button");
 
@@ -46,16 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://wa.link/1mumrb", // 011-6964-1356
   ];
 
-  
-
   const randomIndex = Math.floor(Math.random() * links.length);
   whatsappButton.href = links[randomIndex];
 
   whatsappButton.addEventListener("click", () => {
-
     gtag('event', 'click_whatsapp', {
       event_category: 'engagement',
       event_label: 'Botón WhatsApp',
     });
-});
+  });
 });
