@@ -6,7 +6,9 @@ body {
   background: linear-gradient(to bottom, #240046, #5a189a);
   color: white;
   overflow: hidden;
-  height: 100.3vh;
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -20,6 +22,9 @@ body {
   background-image: url("casino-bg.jpg");
   background-size: cover;
   background-position: center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
   opacity: 0.2;
   z-index: -2;
 }
@@ -129,6 +134,8 @@ footer a:hover {
 
 /* Estilo visual de la ficha */
 .chip {
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
   position: absolute;
   width: 40px;
   height: 40px;
