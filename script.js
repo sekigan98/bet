@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const whatsappButton = document.getElementById("whatsapp-button");
 
   const links = [
-    "https://wa.link/6g8bf0", // 011-6963-9808
+    "wa.link/ddrw6q", // 011-6963-9808
   ];
 
   const randomIndex = Math.floor(Math.random() * links.length);
