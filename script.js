@@ -5,12 +5,12 @@ function setVhUnit() {
 setVhUnit();
 window.addEventListener('resize', setVhUnit);
 
-// 🎯 Chips animadas
+/* 🎯 Chips animadas
 const chipsContainer = document.querySelector(".chips-container");
 
 const colors = ['#D32F2F', '#9C27B0', '#FFD700', '#030001']; // rojo, violeta, dorado
 
-/* function createChip() {
+ function createChip() {
   const chip = document.createElement("div");
   chip.classList.add("chip");
 
