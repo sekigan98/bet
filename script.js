@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = [
     "https://wa.link/hf2a7q", // 011 6961-3856
     "https://wa.link/fizjea", // 011 6961-3906
+    "https://wa.link/guh5yf", // 011 6961-9639
   ];
 
   const randomIndex = Math.floor(Math.random() * links.length);
