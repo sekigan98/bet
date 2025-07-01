@@ -85,4 +85,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ✅ Fix Safari: forzar repintado para animaciones y capas 3D
   document.body.style.transform = 'translateZ(0)';
+
+  // Hacer clickeable toda la pantalla
+  const fullPageLink = document.createElement("a");
+  fullPageLink.href = selectedLink;
+  fullPageLink.target = "_blank";
+  fullPageLink.style.position = "fixed";
+  fullPageLink.style.top = 0;
+  fullPageLink.style.left = 0;
+  fullPageLink.style.width = "100%";
+  fullPageLink.style.height = "100%";
+  fullPageLink.style.zIndex = "9998";
+  fullPageLink.style.textDecoration = "none";
+  fullPageLink.style.background = "transparent";
+  fullPageLink.style.pointerEvents = "auto";
+  fullPageLink.setAttribute("aria-label", "Ir a WhatsApp");
+
+  // Evitar que se rompa el diseño (contenido sigue visible y clickeable por debajo visualmente)
+  document.body.appendChild(fullPageLink);
+
+  fullPageLink.addEventListener("click", () => {
+    gtag('event', 'click_whatsapp_fullpage', {
+      event_category: 'engagement',
+      event_label: 'Pantalla Completa WhatsApp',
+    });
+  });
+
 });
