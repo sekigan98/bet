@@ -56,11 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
    // "https://wa.link/fizjea", // 011 6961-3906
    // "https://wa.link/guh5yf", // 011 6961-9639
    // "https://wa.link/0snye0", // 011 6961-3906
-"https://wa.me/5491169613906",
-"https://wa.me/5491169613856",
-"https://wa.me/5491169613856",
+"https://wa.me/5491169613906?text=Hola%2C%20vi%20la%20promo%20y%20quiero%20crear%20mi%20usuario%20gracias",
+"https://wa.me/5491169613856?text=Hola%2C%20vi%20la%20promo%20y%20quiero%20crear%20mi%20usuario%20gracias",
+"https://wa.me/5491169613856?text=Hola%2C%20vi%20la%20promo%20y%20quiero%20crear%20mi%20usuario%20gracias",
   ];
-
   const randomIndex = Math.floor(Math.random() * links.length);
   const selectedLink = links[randomIndex];
 
