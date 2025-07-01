@@ -120,7 +120,10 @@ h1 {
 
 /* Botón de WhatsApp */
 .whatsapp-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   background-color: #25D366;
   color: rgb(0, 0, 0);
   padding: 15px 34px;
@@ -131,6 +134,15 @@ h1 {
   transition: background-color 0.3s;
   margin-bottom: 10px;
   z-index: 3;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5b;
+}
+
+.whatsapp-icon {
+  width: 28px;
+  height: 28px;
 }
 
 .whatsapp-button:hover {
