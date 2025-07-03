@@ -31,27 +31,47 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const container = document.getElementById("fake-reviews");
-  if (container) {
-    reviews.forEach(r => {
-      const div = document.createElement("div");
-      div.style.display = "flex";
-      div.style.alignItems = "flex-start";
-      div.style.gap = "12px";
-      div.style.marginBottom = "18px";
-      div.style.background = "#fff";
-      div.style.borderRadius = "10px";
-      div.style.padding = "12px";
-      div.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+  if (!container) return;
 
-      div.innerHTML = `
-        <img src="${r.foto}" alt="Foto de ${r.nombre}" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
-        <div>
-          <strong>${r.nombre}</strong> <span style="color:#888; font-size: 13px;">· ${r.fecha}</span><br>
-          <span style="color: #FFD700;">${"★".repeat(r.estrellas)}</span><br>
-          <p style="margin: 5px 0 0; font-size: 15px; color: #444;">${r.texto}</p>
-        </div>
-      `;
-      container.appendChild(div);
-    });
-  }
+  container.style.position = "relative";
+  container.style.width = "100%";
+  container.style.maxWidth = "320px";
+  container.style.margin = "0 auto";
+  container.style.minHeight = "90px";
+
+  let index = 0;
+  const showReview = () => {
+    const r = reviews[index];
+    container.innerHTML = "";
+
+    const div = document.createElement("div");
+    div.style.display = "flex";
+    div.style.alignItems = "center";
+    div.style.gap = "10px";
+    div.style.background = "#fff";
+    div.style.borderRadius = "10px";
+    div.style.padding = "10px";
+    div.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+    div.style.opacity = 0;
+    div.style.transition = "opacity 0.5s ease";
+
+    div.innerHTML = `
+      <img src="${r.foto}" alt="Foto de ${r.nombre}" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+      <div style="font-size: 14px;">
+        <strong>${r.nombre}</strong> <span style="color:#888; font-size:12px;">· ${r.fecha}</span><br>
+        <span style="color: #FFD700;">${"★".repeat(r.estrellas)}</span><br>
+        <span>${r.texto}</span>
+      </div>
+    `;
+    container.appendChild(div);
+
+    setTimeout(() => {
+      div.style.opacity = 1;
+    }, 100);
+
+    index = (index + 1) % reviews.length;
+  };
+
+  showReview();
+  setInterval(showReview, 4000);
 });
