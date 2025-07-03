@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
   container.style.maxWidth = "320px";
   container.style.margin = "0 auto";
   container.style.minHeight = "90px";
-
+  container.style.zIndex = "9999";
+  
   let index = 0;
   const showReview = () => {
     const r = reviews[index];
