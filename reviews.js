@@ -55,13 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
     div.style.opacity = 0;
     div.style.transition = "opacity 0.5s ease";
 
-    div.innerHTML = `
-      <img src="${r.foto}" alt="Foto de ${r.nombre}" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
-      <div style="font-size: 14px;">
-        <strong>${r.nombre}</strong> <span style="color:#888; font-size:12px;">· ${r.fecha}</span><br>
-        <span style="color: #FFD700;">${"★".repeat(r.estrellas)}</span><br>
-        <span>${r.texto}</span>
-      </div>
+ div.innerHTML = `
+  <img src="${r.foto}" alt="Foto de ${r.nombre}" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+  <div style="font-size: 14px; color: #222;">
+    <strong>${r.nombre}</strong> <span style="color:#666; font-size:12px;">· ${r.fecha}</span><br>
+    <span style="color: #FFD700;">${"★".repeat(r.estrellas)}</span><br>
+    <span>${r.texto}</span>
+  </div>
+`;
     `;
     container.appendChild(div);
 
