@@ -32,40 +32,50 @@ const reviews = [
   { nombre: "Hernán D.", texto: "Funciona perfecto. Nada que criticar.", fecha: "Hace 6 días", estrellas: 5, foto: "https://randomuser.me/api/portraits/men/89.jpg" },
 ];
 
+ // 🔀 Mezclar reseñas para que aparezcan en orden aleatorio al cargar
+  reviews.sort(() => Math.random() - 0.5);
+
   const container = document.getElementById("fake-reviews");
   if (!container) return;
 
-  container.style.position = "relative";
-  container.style.width = "100%";
-  container.style.maxWidth = "320px";
-  container.style.margin = "0 auto";
-  container.style.minHeight = "90px";
-  container.style.zIndex = "9999";
-  
+  // 💄 Estilos del contenedor
+  Object.assign(container.style, {
+    position: "relative",
+    width: "100%",
+    maxWidth: "320px",
+    margin: "30px auto 0",
+    minHeight: "90px",
+    zIndex: "9994"
+  });
+
   let index = 0;
+
   const showReview = () => {
     const r = reviews[index];
-    container.innerHTML = "";
+    container.innerHTML = ""; // Limpiar anterior
 
     const div = document.createElement("div");
-    div.style.display = "flex";
-    div.style.alignItems = "center";
-    div.style.gap = "10px";
-    div.style.background = "#fff";
-    div.style.borderRadius = "10px";
-    div.style.padding = "10px";
-    div.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
-    div.style.opacity = 0;
-    div.style.transition = "opacity 0.5s ease";
+    Object.assign(div.style, {
+      display: "flex",
+      alignItems: "center",
+      gap: "10px",
+      background: "#fff",
+      borderRadius: "10px",
+      padding: "10px",
+      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+      opacity: 0,
+      transition: "opacity 0.5s ease"
+    });
 
- div.innerHTML = `
-  <img src="${r.foto}" alt="Foto de ${r.nombre}" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
-  <div style="font-size: 14px; color: #222;">
-    <strong>${r.nombre}</strong> <span style="color:#666; font-size:12px;">· ${r.fecha}</span><br>
-    <span style="color: #FFD700;">${"★".repeat(r.estrellas)}</span><br>
-    <span>${r.texto}</span>
-  </div>
+    div.innerHTML = `
+      <img src="${r.foto}" alt="Foto de ${r.nombre}" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+      <div style="font-size: 14px; color: #222;">
+        <strong>${r.nombre}</strong> <span style="color:#666; font-size:12px;">· ${r.fecha}</span><br>
+        <span style="color: #FFD700;">${"★".repeat(r.estrellas)}</span><br>
+        <span>${r.texto}</span>
+      </div>
     `;
+
     container.appendChild(div);
 
     setTimeout(() => {
