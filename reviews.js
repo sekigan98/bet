@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <span style="color: #FFD700;">${"★".repeat(r.estrellas)}</span><br>
     <span>${r.texto}</span>
   </div>
-`;
     `;
     container.appendChild(div);
 
