@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cambiarPalabra = () => {
     contenedor.style.animation = "none"; // reset animación
     void contenedor.offsetWidth;        // trigger repaint
-    contenedor.style.animation = "fadeDown 0.6s ease";
+    contenedor.style.animation = "bounceIn 0.6s ease"; // animación rebote
 
     contenedor.textContent = palabras[i];
     i = (i + 1) % palabras.length;
