@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
   const elegido = numeros[Math.floor(Math.random() * numeros.length)];
 
-  const mensaje = "?text=¡Hola!%20Me%20interesa%20arrancar%20con%20el%20beneficio%20de%20bienvenida%20que%20vi.%20¿%C3%93mo%20sigo?";
+  const mensaje = "?text=¡Hola!%20quiero%20crear%20mi%20cuenta%20gratis%20en%20Bet300";
 
   // Evento para Google Analytics 4
   if (typeof gtag === "function") {
