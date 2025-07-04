@@ -4,10 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "https://wa.me/5491169613856"
   ];
   const elegido = numeros[Math.floor(Math.random() * numeros.length)];
+  const mensaje = "?text=¡Hola!%20Me%20gustaría%20más%20información%20sobre%20el%20bono%20que%20vi.%20¿Cómo%20sigo?";
 
-  const mensaje = "?text=¡Hola!%20quiero%20crear%20mi%20cuenta%20gratis%20en%20Bet300";
+  const urlFinal = elegido + mensaje;
 
-  // Evento para Google Analytics 4
+  // Enviar evento a Google Analytics
   if (typeof gtag === "function") {
     gtag('event', 'redireccion_whatsapp', {
       event_category: 'Redireccion',
@@ -16,8 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Redirección con delay
+  // Establecer URL en el botón de respaldo (si existe)
+  const boton = document.getElementById("whatsapp-button");
+  if (boton) {
+    boton.href = urlFinal;
+  }
+
+  // Redireccionar automáticamente
   setTimeout(() => {
-    window.location.href = elegido + mensaje;
-  }, 1500); // 1.5 segundos de espera
+    window.location.href = urlFinal;
+  }, 3500);
 });
