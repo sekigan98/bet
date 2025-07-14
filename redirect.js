@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const numeros = [
     "https://wa.me/5491169640722",
-    "https://wa.me/5491169616232",
-    "https://wa.me/5491169636653",
     "https://wa.me/5491169616397"
   ];
   const elegido = numeros[Math.floor(Math.random() * numeros.length)];
