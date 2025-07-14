@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const numeros = [
+    "https://wa.me/5491169639518",
     "https://wa.me/5491169640722",
-    "https://wa.me/5491169616397"
+    "https://wa.me/5491169628367",
+    "https://wa.me/5491169616397",
+    "https://wa.me/5491169635710",
+    "https://wa.me/5491169648712",
+    "https://wa.me/5491169640767"
   ];
   const elegido = numeros[Math.floor(Math.random() * numeros.length)];
   const mensaje = "?text=¡Hola!%20Me%20gustaría%20más%20información%20sobre%20el%20bono%20que%20vi.%20¿Cómo%20sigo?";
