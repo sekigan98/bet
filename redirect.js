@@ -31,5 +31,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // Redireccionar automáticamente
   setTimeout(() => {
     window.location.href = urlFinal;
-  }, 5500);
+  }, 500);
 });
