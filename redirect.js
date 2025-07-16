@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const numeros = [
     "https://wa.me/5491169639518",
     "https://wa.me/5491169640722",
-    "https://wa.me/5491169628367",
+    "https://wa.me/5491169606562",
     "https://wa.me/5491169616397",
-    "https://wa.me/5491169635710",
+    "https://wa.me/5491169616617",
     "https://wa.me/5491169648712",
     "https://wa.me/5491169640767"
   ];
