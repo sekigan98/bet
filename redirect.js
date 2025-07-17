@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const numeros = [
-    "5491169639518",
-    "5491169640722",
-    "5491169606562",
-    "5491169616397",
-    "5491169616617",
-    "5491169648712",
-    "5491169640767"
-  ];
+const numeros = [
+  "https://api.whatsapp.com/send?phone=5491169639518",
+  "https://api.whatsapp.com/send?phone=5491169640722",
+  "https://api.whatsapp.com/send?phone=5491169606562",
+  "https://api.whatsapp.com/send?phone=5491169616397",
+  "https://api.whatsapp.com/send?phone=5491169616617",
+  "https://api.whatsapp.com/send?phone=5491169648712",
+  "https://api.whatsapp.com/send?phone=5491169640767"
+];
 
-  const numero = numeros[Math.floor(Math.random() * numeros.length)];
-  const mensajePlano = "¡Hola! Me gustaría más información sobre el bono que vi. ¿Cómo sigo?";
-  const mensaje = "&text=" + encodeURIComponent(mensajePlano);
-  const urlFinal = `https://api.whatsapp.com/send?phone=${numero}${mensaje}`;
+  const elegido = numeros[Math.floor(Math.random() * numeros.length)];
+  const mensaje = "&text=¡Hola!%20Me%20gustaría%20más%20información%20sobre%20el%20bono%20que%20vi.%20¿Cómo%20sigo?";
 
+  const urlFinal = elegido + mensaje;
 
   // Enviar evento a Google Analytics
   if (typeof gtag === "function") {
