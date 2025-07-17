@@ -1,35 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-const numeros = [
-  "https://api.whatsapp.com/send?phone=5491169639518",
-  "https://api.whatsapp.com/send?phone=5491169640722",
-  "https://api.whatsapp.com/send?phone=5491169606562",
-  "https://api.whatsapp.com/send?phone=5491169616397",
-  "https://api.whatsapp.com/send?phone=5491169616617",
-  "https://api.whatsapp.com/send?phone=5491169648712",
-  "https://api.whatsapp.com/send?phone=5491169640767"
-];
+  const numeros = [
+    "5491169639518",
+    "5491169640722",
+    "5491169606562",
+    "5491169616397",
+    "5491169616617",
+    "5491169648712",
+    "5491169640767"
+  ];
 
-  const elegido = numeros[Math.floor(Math.random() * numeros.length)];
-  const mensaje = "&text=¡Hola!%20Me%20gustaría%20más%20información%20sobre%20el%20bono%20que%20vi.%20¿Cómo%20sigo?";
+  const mensajePlano = "Hola! Vi el bono y me interesa. ¿Podés contarme cómo funciona?";
+  const mensaje = "&text=" + encodeURIComponent(mensajePlano);
 
-  const urlFinal = elegido + mensaje;
+  const numero = numeros[Math.floor(Math.random() * numeros.length)];
+  const urlFinal = `https://api.whatsapp.com/send?phone=${numero}${mensaje}`;
 
-  // Enviar evento a Google Analytics
+  // Evento GA
   if (typeof gtag === "function") {
     gtag('event', 'redireccion_whatsapp', {
       event_category: 'Redireccion',
-      event_label: elegido,
+      event_label: numero,
       value: 1
     });
   }
 
-  // Establecer URL en el botón de respaldo (si existe)
+  // Botón fallback
   const boton = document.getElementById("whatsapp-button");
   if (boton) {
     boton.href = urlFinal;
   }
 
-  // Redireccionar automáticamente
+  // Redirección automática
   setTimeout(() => {
     window.location.href = urlFinal;
   }, 10);
