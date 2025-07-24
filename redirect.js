@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "5491169640767" //wp1
   ];
 
-  const mensajePlano = "Hola! Vi el bono y me interesa. ¿Podés contarme cómo funciona?";
+  const mensajePlano = "Hola! Vi el bono quiero reclamarlo. ¿Podés contarme más?";
   const mensaje = "&text=" + encodeURIComponent(mensajePlano);
 
   const numero = numeros[Math.floor(Math.random() * numeros.length)];
