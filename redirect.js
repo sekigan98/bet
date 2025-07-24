@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const numeros = [
-    "5491169628596",
-    "5491169606562",
-    "5491169648712",
-    "5491169616397",
-    "5491169651371",
-    "5491169640722",
-    "5491169640767"
+    "5491169628596", //wp3
+    "5491169606562", //wp6
+    "5491169648712", //wp5
+    "5491169616397", //wp7
+    "5491169650944", //wp4
+    "5491169640722", //wp2
+    "5491169640767" //wp1
   ];
 
   const mensajePlano = "Hola! Vi el bono y me interesa. ¿Podés contarme cómo funciona?";
