@@ -36,4 +36,4 @@ setTimeout(() => {
     fbq('track', 'Contact');
   }
   window.location.replace(urlFinal);
-}, 600);
+}, 1500);
