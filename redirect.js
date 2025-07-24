@@ -37,3 +37,4 @@ setTimeout(() => {
   }
   window.location.replace(urlFinal);
 }, 1500);
+});
