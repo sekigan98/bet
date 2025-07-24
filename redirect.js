@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Redirección automática
 setTimeout(() => {
+  if (typeof fbq === "function") {
+    fbq('track', 'Contact');
+  }
   window.location.replace(urlFinal);
 }, 600);
-});
