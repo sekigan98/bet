@@ -8,7 +8,7 @@
     0 0 10px #b600ff,
     0 0 20px #8f00ff,
     0 0 30px #8f00ff;
-  animation: pulseNeon 2.5s ease-in-out infinite;
+  animation: pulseNeon 2.0s ease-in-out infinite;
   margin-top: 30px;
   margin-bottom: 20px;
 }
